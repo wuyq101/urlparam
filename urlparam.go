@@ -39,7 +39,6 @@ func Marshal(holder interface{}) url.Values {
 	return ret
 }
 
-
 func Unmarshal(params url.Values, holder interface{}) error {
 	tp := reflect.TypeOf(holder)
 	if tp.Kind() != reflect.Ptr {
