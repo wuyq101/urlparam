@@ -11,7 +11,6 @@ import (
 	"code.byted.org/caijing_backend/alpha/service"
 )
 
-
 func Marshal(holder interface{}) url.Values {
 	ret := make(url.Values)
 	tp := reflect.TypeOf(holder)
@@ -56,7 +55,6 @@ func Unmarshal(params url.Values, holder interface{}) error {
 		}
 		required := ft.Tag.Get("required")
 		x := params.Get(tag)
-
 		fv := val.Field(i)
 		if len(x) == 0 && "true" == required {
 			return errors.New("missing required param: " + tag)
